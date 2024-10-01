@@ -26,6 +26,7 @@ public class Form_1 extends JFrame {
         JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton botonRegistrar = new JButton("Registrar");
         panelBoton.add(botonRegistrar);
+        //COMENTARIO ADICIONAL
 
         // Agregar el panel del botón al marco
         add(panelBoton, BorderLayout.NORTH);
