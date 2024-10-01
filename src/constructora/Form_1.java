@@ -26,11 +26,10 @@ public class Form_1 extends JFrame {
         JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton botonRegistrar = new JButton("Registrar");
         panelBoton.add(botonRegistrar);
-        //COMENTARIO ADICIONAL
 
         // Agregar el panel del botón al marco
         add(panelBoton, BorderLayout.NORTH);
-
+        
         // Etiqueta y campo para usuario
         campoUsuario = new JTextField(20);
         gbc.gridx = 0;
@@ -53,11 +52,25 @@ public class Form_1 extends JFrame {
         gbc.gridy = 4;
         panel.add(etiquetaContrasena, gbc);
 
-        // Acción del botón
+        // Botón para iniciar sesión
+        JButton botonIniciarSesion = new JButton("Iniciar Sesión");
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        panel.add(botonIniciarSesion, gbc);
+
+        // Acción del botón registrar
         botonRegistrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 registrarUsuario();
+            }
+        });
+
+        // Acción del botón iniciar sesión
+        botonIniciarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                iniciarSesion();
             }
         });
 
@@ -73,6 +86,13 @@ public class Form_1 extends JFrame {
         JOptionPane.showMessageDialog(this, "Usuario registrado: " + usuario);
     }
 
-    public static void main(String[] args) {SwingUtilities.invokeLater(() -> new Form_1());}
+    private void iniciarSesion() {
+        String usuario = campoUsuario.getText();
+        String contrasena = new String(campoContrasena.getPassword());
+        // Lógica para iniciar sesión (validar usuario y contraseña)
+        JOptionPane.showMessageDialog(this, "Iniciando sesión como: " + usuario);
+    }
+
+    //public static void main(String[] args) {SwingUtilities.invokeLater(() -> new Form_1());}
 }
 
