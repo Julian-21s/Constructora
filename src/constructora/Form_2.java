@@ -105,5 +105,5 @@ public class Form_2 extends JFrame {
         }
     }
 
-    //public static void main(String[] args) {SwingUtilities.invokeLater(() -> new Form_2());}
+    public static void main(String[] args) {SwingUtilities.invokeLater(() -> new Form_2());}
 }
